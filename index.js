@@ -2,6 +2,7 @@ import express, { response } from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from "dotenv";
+import path from 'path'
 dotenv.config();
 
 import JWT from 'jsonwebtoken';
@@ -82,7 +83,7 @@ app.post("/register", (req, res) => {
                 if (err) {
                     res.send(err)
                 } else {
-                    JWT.sign({ user }, JWT_SECRET, { expiresIn: "2h" }, (err, token) => {
+                    JWT.sign({ user }, process.env.JWT_SECRET, { expiresIn: "2h" }, (err, token) => {
                         if (err) {
                             res.send({ status: false, message: "Something went wrong, please try after sometime" })
                         }
@@ -172,6 +173,16 @@ app.delete("/deleteuser/:id", verifyToken, async (req, res) => {
         res.status(422).json(error)
     }
 })
+
+//DEPLOYMENT
+const __dirname = path.resolve();
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, "/client/build")));
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    })
+}
+
 app.listen(9002, () => {
     console.log("listning on port 9002")
 })
@@ -183,8 +194,8 @@ function verifyToken(req, res, next) {
     let token = req.headers['authorization'];
     if (token) {
         token = token.split(' ')[1];
-        console.warn(token);
-        JWT.verify(token, JWT_SECRET, (err, valid) => {
+        console.warn(process.env.JWT_SECRET);
+        JWT.verify(token, process.env.JWT_SECRET, (err, valid) => {
             if (err) {
                 res.status(403).send({ status: false, message: "Token expired, please login" });
             } else {

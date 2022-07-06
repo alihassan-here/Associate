@@ -12,7 +12,7 @@ const Home = ({ setLoginUser }) => {
   const getData = async () => {
 
 
-    axios.get("http://localhost:9002/getdata", {
+    axios.get("https://cargoxperts.herokuapp.com/getdata", {
       headers: {
         authorization: 'Bearer ' + JSON.parse(localStorage.getItem("token"))
       }
@@ -27,23 +27,23 @@ const Home = ({ setLoginUser }) => {
     getData()
   }, []);
 
-  const handleChage=e=>{
+  const handleChage = e => {
     setSearch(e.target.value);
   }
 
 
   const filteredPosts = data?.filter(
     el => {
-        return (
-            el.name.toLowerCase().includes(search.toLowerCase()) ||   el.country.toLowerCase().includes(search.toLowerCase())
-        );
+      return (
+        el.name.toLowerCase().includes(search.toLowerCase()) || el.country.toLowerCase().includes(search.toLowerCase())
+      );
     }
-);
- 
+  );
+
 
   const deleteUser = (id) => {
 
-    axios.delete(`http://localhost:9002/deleteuser/${id}`, {
+    axios.delete(`https://cargoxperts.herokuapp.com/deleteuser/${id}`, {
       headers: {
         authorization: 'Bearer ' + JSON.parse(localStorage.getItem("token"))
       }
@@ -61,7 +61,7 @@ const Home = ({ setLoginUser }) => {
 
 
     <div className='container'>
-     
+
       <div className='d-flex justify-content-between my-4'>
         <div className='search_wrapper d-flex'>
 
