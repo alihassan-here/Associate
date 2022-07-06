@@ -9,7 +9,7 @@ import JWT from 'jsonwebtoken';
 
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: false }))
 app.use(cors());
 
 mongoose.connect(process.env.MONGO_URI, {
@@ -174,12 +174,14 @@ app.delete("/deleteuser/:id", verifyToken, async (req, res) => {
 })
 
 //DEPLOYMENT
-const __dirname = path.resolve();
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, "/client/build")));
-    app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-    })
+    //Set static folder
+    app.use(express.static('client/build'));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    }
+    );
 }
 
 app.listen(9002, () => {
