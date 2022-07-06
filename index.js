@@ -39,6 +39,10 @@ const associateSchema = new mongoose.Schema({
     address: String
 })
 const Associate = new mongoose.model("Associate", associateSchema)
+
+app.get("/test", (req, res) => {
+    res.send("HELLO THERE");
+})
 //Routes
 //login
 app.post("/login", (req, res) => {
