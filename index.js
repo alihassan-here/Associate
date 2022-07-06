@@ -19,7 +19,6 @@ mongoose.connect(process.env.MONGO_URI, {
     console.log("DB Connected");
 });
 
-
 //user schema
 const userSchema = new mongoose.Schema({
     name: String,
