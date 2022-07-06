@@ -14,7 +14,7 @@ const EditAssociate = () => {
         landline: "",
         mobile: "",
         account: "",
-        coutry: "",
+        country: "",
         address: ""
     })
     const handleAssociate = (e) => {
@@ -28,7 +28,6 @@ const EditAssociate = () => {
 
 
     const getData = async () => {
-
 
         axios.get(`https://cargoxperts.herokuapp.com/getuser/${id}`, {
             headers: {
@@ -86,7 +85,7 @@ const EditAssociate = () => {
                 <div className='col-12 col-md-6'>
                     <div className='form-group'>
                         <label>Bank Account</label>
-                        <input type='number' className='form-control' name='country' value={associate.account} onChange={handleAssociate} />
+                        <input type='number' className='form-control' name='account' value={associate.account} onChange={handleAssociate} />
                     </div>
                 </div>
                 <div className='col-12 col-md-6'>
