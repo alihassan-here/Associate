@@ -1,0 +1,259 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #dde1e7;
+}
+
+.home {
+  width: 400px;
+  height: 300px;
+  background-color: #ddd;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #ddd;
+  margin: auto;
+}
+
+.login_component {
+  background-color: #dde1e7;
+  border-radius: 30px;
+  box-shadow: 5px 5px 8px #cbcfd5, -5px -5px 8px #eff3f9;
+  max-width: 600px;
+  width: 100%;
+  padding: 30px 30px;
+  padding-bottom: 40px;
+  color: #333;
+  margin: 50px auto;
+}
+
+.register_associate {
+  background-color: #dde1e7;
+  border-radius: 30px;
+  box-shadow: 5px 5px 8px #cbcfd5, -5px -5px 8px #eff3f9;
+
+  padding: 30px 20px;
+  padding-bottom: 40px;
+}
+
+.custom_heading {
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.login_component label {
+  font-size: 14px;
+  line-height: 30px;
+  color: #333;
+}
+
+.login_component input,
+._input {
+  background-color: #dde1e7 !important;
+  border: none;
+  border-radius: 40px !important;
+  box-shadow: inset 5px 5px 8px #cbcfd5, inset -5px -5px 8px #eff3f9;
+}
+
+input:focus {
+  box-shadow: inset 5px 5px 8px #cbcfd5, inset -5px -5px 8px #eff3f9 !important;
+  outline: none !important;
+  background-color: #dde1e7 !important;
+  border: none !important;
+}
+
+input {
+  background-color: #dde1e7 !important;
+  border: none;
+  border-radius: 40px !important;
+  box-shadow: inset 5px 5px 8px #cbcfd5, inset -5px -5px 8px #eff3f9;
+}
+
+input:focus {
+  box-shadow: inset 5px 5px 8px #cbcfd5, inset -5px -5px 8px #eff3f9 !important;
+  outline: none !important;
+  background-color: #dde1e7 !important;
+  border: none !important;
+}
+
+.btn-loginn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btn-loginn button,
+.login {
+  padding: 5px 20px;
+  border-radius: 30px;
+  border: none;
+  background-color: #dde1e7;
+  color: #333;
+  box-shadow: 5px 5px 8px #cbcfd5, -5px -5px 8px #eff3f9 !important;
+}
+
+.btn-login button:hover,
+.login:hover {
+  box-shadow: inset 5px 5px 8px #cbcfd5, inset -5px -5px 8px #eff3f9 !important;
+  color: #333;
+}
+
+.navbar {
+  box-shadow: 5px 5px 8px #cbcfd5, -5px -5px 8px #eff3f9 !important;
+  border-radius: 30px;
+  background-color: #dde1e7 !important;
+
+}
+
+.navbar a {
+  color: #333 !important;
+}
+
+.navbar-brand img {
+  width: 70px;
+  object-fit: cover;
+}
+
+.associate_data {
+  box-shadow: 5px 5px 8px #cbcfd5, -5px -5px 8px #eff3f9 !important;
+  border-radius: 20px;
+  background-color: #dde1e7 !important;
+  padding: 10px;
+}
+
+thead {
+  box-shadow: 5px 5px 8px #cbcfd5, -5px -5px 8px #eff3f9 !important;
+  color: #333;
+  border-radius: 10px;
+
+}
+
+thead tr {
+  box-shadow: 5px 5px 8px #cbcfd5, -5px -5px 8px #eff3f9 !important;
+  color: #333;
+  border-radius: 10px;
+}
+
+table tbody tr {
+  box-shadow: inset 5px 5px 8px #cbcfd5, inset -5px -5px 8px #eff3f9 !important;
+  color: #333;
+  border-radius: 10px;
+  margin: 5px 0px !important;
+}
+
+tbody {
+  padding: 5px;
+}
+
+.fa-trash-can {
+  color: red !important;
+}
+
+.actions i {
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 12px;
+  border: none;
+  background-color: #dde1e7;
+  color: #333;
+  box-shadow: 5px 5px 8px #cbcfd5, -5px -5px 8px #eff3f9 !important;
+  cursor: pointer;
+}
+
+.actions i:hover,
+.actions i:active {
+  box-shadow: inset 5px 5px 8px #cbcfd5, inset -5px -5px 8px #eff3f9 !important;
+  color: #333;
+}
+
+.register_associate .col-12 {
+  margin-bottom: 30px;
+}
+
+/* Associate Details */
+.associate_detail {
+  box-shadow: 5px 5px 8px #cbcfd5, -5px -5px 8px #eff3f9 !important;
+  color: #333;
+  border-radius: 30px;
+  padding: 30px;
+  max-width: 800px;
+}
+
+.profile_wrapper {
+  width: 100px;
+  height: 100px;
+  box-shadow: 5px 5px 8px #cbcfd5, -5px -5px 8px #eff3f9 !important;
+  border-radius: 50%;
+
+}
+
+.profile_wrapper img {
+  width: 100%;
+  border-radius: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.associate_detail {
+  position: relative;
+}
+
+.details_info .col-12 {
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-size: 15px;
+  font-weight: bold;
+  margin-right: 5px;
+  line-height: 20px;
+  color: #333;
+}
+
+.heading i {
+  margin-right: 3px !important;
+}
+
+.value {
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+}
+
+.copyy {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 200px;
+}
+
+.clip_data {
+  display: flex;
+  list-style: none;
+  opacity: 0;
+}
+
+.clip_data li {
+  margin: 0px 3px;
+}
+
+table tbody tr:nth-child(even) {
+  box-shadow: 5px 5px 8px #cbcfd5, -5px -5px 8px #eff3f9 !important;
+  ;
+}
