@@ -39,10 +39,6 @@ const associateSchema = new mongoose.Schema({
     address: String
 })
 const Associate = new mongoose.model("Associate", associateSchema)
-
-app.get("/test", (req, res) => {
-    res.send("HELLO THERE");
-})
 //Routes
 //login
 app.post("/login", (req, res) => {
@@ -104,7 +100,6 @@ app.post("/register", (req, res) => {
 ///Add Associate
 app.post("/add", verifyToken, (req, res) => {
     const { name, email, landline, mobile, country, account, address } = req.body;
-    console.log(req.body)
     Associate.findOne({ email: email }, (err, user) => {
         if (user) {
             res.send({ message: "user already exist" })

@@ -24,7 +24,7 @@ const RegisterAssociate = () => {
     }
     const addAssociate = () => {
         const { name, email, landline, mobile, country, account, address } = associate;
-        if (!email || !name || !mobile || !country) {
+        if (!name || !country) {
             alert("please fill the data")
         }
         else {
@@ -51,38 +51,38 @@ const RegisterAssociate = () => {
                 </div>
                 <div className='col-12 col-md-6'>
                     <div className='form-group'>
-                        <label>Associate Email</label>
+                        <label>Email</label>
                         <input type='text' className='form-control' name='email' value={associate.email} onChange={handleAssociate} />
                     </div>
                 </div>
                 <div className='col-12 col-md-6'>
                     <div className='form-group'>
-                        <label>Associate's Land Line No.</label>
+                        <label>Land Line No.</label>
                         <input type='number' className='form-control' name='landline' value={associate.landline} onChange={handleAssociate} />
                     </div>
                 </div>
                 <div className='col-12 col-md-6'>
                     <div className='form-group'>
-                        <label>Associate's Mobile No.</label>
+                        <label>Mobile No.</label>
                         <input type='number' className='form-control' name='mobile' value={associate.mobile} onChange={handleAssociate} />
                     </div>
                 </div>
                 <div className='col-12 col-md-6'>
                     <div className='form-group'>
-                        <label>Associate's Bank Account</label>
+                        <label>Bank Account</label>
                         <input type='number' className='form-control' name='account' value={associate.account} onChange={handleAssociate} />
                     </div>
                 </div>
                 <div className='col-12 col-md-6'>
                     <div className='form-group'>
-                        <label>Associate Country</label>
+                        <label>Country</label>
                         <input type='text' className='form-control' name='country' value={associate.country} onChange={handleAssociate} />
                     </div>
                 </div>
 
                 <div className='col-12 col-md-12'>
                     <div className='form-group'>
-                        <label>Associate Address</label>
+                        <label>Address</label>
                         <input type='text' className='form-control' name='address' value={associate.addressadd} onChange={handleAssociate} />
                     </div>
                 </div>
