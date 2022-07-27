@@ -31,7 +31,7 @@ const EditAssociate = () => {
 
     const getData = async () => {
 
-        axios.get(`http://localhost:5000/getuser/${id}`, {
+        axios.get(`${process.env.REACT_APP_BASE_URL}/getuser/${id}`, {
             headers: {
                 authorization: 'Bearer ' + JSON.parse(localStorage.getItem("token"))
             }
