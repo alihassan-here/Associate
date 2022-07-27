@@ -12,7 +12,7 @@ const Home = ({ setLoginUser }) => {
   const getData = async () => {
 
 
-    axios.get("https://cargoxperts.herokuapp.com/getdata", {
+    axios.get(`${process.env.REACT_APP_BASE_URL}/getdata`, {
       headers: {
         authorization: 'Bearer ' + JSON.parse(localStorage.getItem("token"))
       }
@@ -43,7 +43,7 @@ const Home = ({ setLoginUser }) => {
 
   const deleteUser = (id) => {
 
-    axios.delete(`https://cargoxperts.herokuapp.com/deleteuser/${id}`, {
+    axios.delete(`${process.env.REACT_APP_BASE_URL}/deleteuser/${id}`, {
       headers: {
         authorization: 'Bearer ' + JSON.parse(localStorage.getItem("token"))
       }

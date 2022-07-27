@@ -30,13 +30,17 @@ const User = new mongoose.model("User", userSchema)
 // Associate Schems
 
 const associateSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    landline: Number,
-    mobile: Number,
+
     country: String,
-    account: String,
-    address: String
+    name: String,
+    address: String,
+    contactperson: String,
+    telno: String,
+    mobile: String,
+    fax: String,
+    email: String,
+    website: String,
+
 })
 const Associate = new mongoose.model("Associate", associateSchema)
 //Routes
@@ -99,19 +103,21 @@ app.post("/register", (req, res) => {
 })
 ///Add Associate
 app.post("/add", verifyToken, (req, res) => {
-    const { name, email, landline, mobile, country, account, address } = req.body;
+    const { country, name, address, contactperson, telno, mobile, fax, email, website } = req.body;
     Associate.findOne({ email: email }, (err, user) => {
         if (user) {
             res.send({ message: "user already exist" })
         } else {
             const agnt = new Associate({
-                name,
-                email,
-                landline,
-                mobile,
                 country,
-                account,
-                address
+                name,
+                address,
+                contactperson,
+                telno,
+                mobile,
+                fax,
+                email,
+                website
             })
             agnt.save((err) => {
                 if (err) {

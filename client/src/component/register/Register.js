@@ -23,7 +23,7 @@ export const Register = () => {
     const register = () => {
         const { name, email, password, reEnterPassword } = user;
         if (name && email && password && (password == reEnterPassword)) {
-            axios.post("https://cargoxperts.herokuapp.com/register", user).then((res) => {
+            axios.post(`${process.env.REACT_APP_BASE_URL}/register`, user).then((res) => {
 
                 if (res.data.status) {
                     localStorage.setItem("user", JSON.stringify(res.data.user));

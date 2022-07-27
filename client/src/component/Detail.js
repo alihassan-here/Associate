@@ -24,7 +24,7 @@ const Detail = () => {
     const getData = async () => {
 
 
-        axios.get(`https://cargoxperts.herokuapp.com/getuser/${id}`, {
+        axios.get(`${process.env.REACT_APP_BASE_URL}/getuser/${id}`, {
             headers: {
                 authorization: 'Bearer ' + JSON.parse(localStorage.getItem("token"))
             }
@@ -54,30 +54,6 @@ const Detail = () => {
                     </div>
                     <div className='col-12 col-md-6'>
                         <div className='d-flex'>
-                            <p className='heading'><i className="fa-solid fa-envelope"></i>Email:</p>
-                            <p className='value'>{data.email}</p>
-                        </div>
-                    </div>
-                    <div className='col-12 col-md-6'>
-                        <div className='d-flex'>
-                            <p className='heading'><i className="fa-solid fa-phone-flip"></i>Land Line:</p>
-                            <p className='value'>{data.landline}</p>
-                        </div>
-                    </div>
-                    <div className='col-12 col-md-6'>
-                        <div className='d-flex'>
-                            <p className='heading'><i className="fa-solid fa-mobile-screen-button"></i>Mobile:</p>
-                            <p className='value'>{data.mobile}</p>
-                        </div>
-                    </div>
-                    <div className='col-12 col-md-6'>
-                        <div className='d-flex'>
-                            <p className='heading'><i className="fa-solid fa-file-invoice-dollar"></i>Bank Details:</p>
-                            <p className='value'>{data.account}</p>
-                        </div>
-                    </div>
-                    <div className='col-12 col-md-6'>
-                        <div className='d-flex'>
                             <p className='heading'><i className="fa-solid fa-earth-africa"></i>Country:</p>
                             <p className='value'>{data.country}</p>
                         </div>
@@ -88,6 +64,47 @@ const Detail = () => {
                             <p className='value'>{data.address}</p>
                         </div>
                     </div>
+                    <div className='col-12 col-md-6'>
+                        <div className='d-flex'>
+                            <p className='heading'><i class="fa-solid fa-address-book"></i>Contact Person:</p>
+                            <p className='value'>{data.contactperson}</p>
+                        </div>
+                    </div>
+                    <div className='col-12 col-md-6'>
+                        <div className='d-flex'>
+                            <p className='heading'><i className="fa-solid fa-phone-flip"></i>Tell No:</p>
+                            <p className='value'>{data.telno}</p>
+                        </div>
+                    </div>
+                    <div className='col-12 col-md-6'>
+                        <div className='d-flex'>
+                            <p className='heading'><i className="fa-solid fa-mobile-screen-button"></i>Mobile:</p>
+                            <p className='value'>{data.mobile}</p>
+                        </div>
+                    </div>
+                    <div className='col-12 col-md-6'>
+                        <div className='d-flex'>
+                            <p className='heading'><i class="fa-solid fa-fax"></i>Fax:</p>
+                            <p className='value'>{data.fax}</p>
+                        </div>
+                    </div>
+                    <div className='col-12 col-md-6'>
+                        <div className='d-flex'>
+                            <p className='heading'><i className="fa-solid fa-envelope"></i>Email:</p>
+                            <p className='value'>{data.email}</p>
+                        </div>
+                    </div>
+                    <div className='col-12 col-md-6'>
+                        <div className='d-flex'>
+                            <p className='heading'><i class="fa-solid fa-browser"></i>Website Link:</p>
+                            <p className='value'>{data.website}</p>
+                        </div>
+                    </div>
+
+
+
+
+
 
                     <button type='button' className='login copyy' onClick={copyToClip}>
                         Copy on Clipboard
@@ -99,26 +116,36 @@ const Detail = () => {
             <div id="foo" className=''>
                 <ul className='clip_data'>
                     <li>
+                        Country: {data.country}
+                    </li>
+                    <li>
                         Name: {data.name}
                     </li>
                     <li>
-                        Email: {data.email}
+                        Address: {data.address}
                     </li>
                     <li>
-                        Land Line: {data.landline}
+                        Contact Person: {data.contactperson}
+                    </li>
+                    <li>
+                        Tell No: {data.telno}
                     </li>
                     <li>
                         Mobile: {data.mobile}
                     </li>
                     <li>
-                        Bank Details: {data.account}
+                        Fax: {data.fax}
                     </li>
                     <li>
-                        Country: {data.country}
+                        Email: {data.email}
                     </li>
+
+
                     <li>
-                        Address: {data.address}
+                        Website Link: {data.website}
                     </li>
+
+
 
                 </ul>
             </div>

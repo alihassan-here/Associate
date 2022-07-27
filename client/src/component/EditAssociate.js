@@ -9,13 +9,15 @@ const EditAssociate = () => {
     // const[data,seData]=useState([])
     const { id } = useParams("")
     const [associate, setAssociate] = useState({
-        name: "",
-        email: "",
-        landline: "",
-        mobile: "",
-        account: "",
         country: "",
-        address: ""
+        name: "",
+        address: "",
+        contactperson: "",
+        telno: "",
+        mobile: "",
+        fax: "",
+        email: "",
+        website: "",
     })
     const handleAssociate = (e) => {
         const { name, value } = e.target;
@@ -29,7 +31,7 @@ const EditAssociate = () => {
 
     const getData = async () => {
 
-        axios.get(`https://cargoxperts.herokuapp.com/getuser/${id}`, {
+        axios.get(`http://localhost:5000/getuser/${id}`, {
             headers: {
                 authorization: 'Bearer ' + JSON.parse(localStorage.getItem("token"))
             }
@@ -45,8 +47,8 @@ const EditAssociate = () => {
     }, [])
 
     const updateAssociate = () => {
-        const { name, email, landline, mobile, account, country, address } = associate
-        axios.patch(`https://cargoxperts.herokuapp.com/updateuser/${id}`, { name, email, landline, mobile, account, country, address }).then((res) => {
+        const { country, name, address, contactperson, telno, mobile, fax, email, website } = associate
+        axios.patch(`${process.env.REACT_APP_BASE_URL}/updateuser/${id}`, { country, name, address, contactperson, telno, mobile, fax, email, website }).then((res) => {
             //    setAssociate(res.data)
             alert("Associate Updated")
             navigate('/')
@@ -60,44 +62,57 @@ const EditAssociate = () => {
             <div className='row'>
                 <div className='col-12 col-md-6'>
                     <div className='form-group'>
-                        <label>Name</label>
-                        <input type='text' className='form-control' name='name' value={associate.name} onChange={handleAssociate} />
-                    </div>
-                </div>
-                <div className='col-12 col-md-6'>
-                    <div className='form-group'>
-                        <label>Email</label>
-                        <input type='text' className='form-control' name='email' value={associate.email} onChange={handleAssociate} />
-                    </div>
-                </div>
-                <div className='col-12 col-md-6'>
-                    <div className='form-group'>
-                        <label>Land Line No.</label>
-                        <input type='number' className='form-control' name='landline' value={associate.landline} onChange={handleAssociate} />
-                    </div>
-                </div>
-                <div className='col-12 col-md-6'>
-                    <div className='form-group'>
-                        <label>Mobile No.</label>
-                        <input type='number' className='form-control' name='mobile' value={associate.mobile} onChange={handleAssociate} />
-                    </div>
-                </div>
-                <div className='col-12 col-md-6'>
-                    <div className='form-group'>
-                        <label>Bank Account</label>
-                        <input type='number' className='form-control' name='account' value={associate.account} onChange={handleAssociate} />
-                    </div>
-                </div>
-                <div className='col-12 col-md-6'>
-                    <div className='form-group'>
-                        <label>Country</label>
+                        <label>Associate Country:</label>
                         <input type='text' className='form-control' name='country' value={associate.country} onChange={handleAssociate} />
                     </div>
                 </div>
                 <div className='col-12 col-md-6'>
                     <div className='form-group'>
-                        <label>Address</label>
+                        <label>Assocciate Name:</label>
+                        <input type='text' className='form-control' name='name' value={associate.name} onChange={handleAssociate} />
+                    </div>
+                </div>
+                <div className='col-12 col-md-6'>
+                    <div className='form-group'>
+                        <label>Address:</label>
                         <input type='text' className='form-control' name='address' value={associate.address} onChange={handleAssociate} />
+                    </div>
+                </div>
+                <div className='col-12 col-md-6'>
+                    <div className='form-group'>
+                        <label>Contact Person:</label>
+                        <input type='text' className='form-control' name='contactperson' value={associate.contactperson} onChange={handleAssociate} />
+                    </div>
+                </div>
+                <div className='col-12 col-md-6'>
+                    <div className='form-group'>
+                        <label>Tell No:</label>
+                        <input type='text' className='form-control' name='telno' value={associate.telno} onChange={handleAssociate} />
+                    </div>
+                </div>
+                <div className='col-12 col-md-6'>
+                    <div className='form-group'>
+                        <label>Mobile:</label>
+                        <input type='text' className='form-control' name='mobile' value={associate.mobile} onChange={handleAssociate} />
+                    </div>
+                </div>
+
+                <div className='col-12 col-md-6'>
+                    <div className='form-group'>
+                        <label>Fax:</label>
+                        <input type='text' className='form-control' name='fax' value={associate.fax} onChange={handleAssociate} />
+                    </div>
+                </div>
+                <div className='col-12 col-md-6'>
+                    <div className='form-group'>
+                        <label>Email:</label>
+                        <input type='text' className='form-control' name='email' value={associate.email} onChange={handleAssociate} />
+                    </div>
+                </div>
+                <div className='col-12 col-md-6'>
+                    <div className='form-group'>
+                        <label>Website Link:</label>
+                        <input type='text' className='form-control' name='website' value={associate.website} onChange={handleAssociate} />
                     </div>
                 </div>
 

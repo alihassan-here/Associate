@@ -25,7 +25,7 @@ const Login = ({ setLoginUser }) => {
         })
     }
     const login = () => {
-        axios.post("https://cargoxperts.herokuapp.com/login", user).then((res) => {
+        axios.post(`${process.env.REACT_APP_BASE_URL}/login`, user).then((res) => {
             if (res.data.status) {
                 localStorage.setItem("user", JSON.stringify(res.data.user));
                 localStorage.setItem("token", JSON.stringify(res.data.auth));
